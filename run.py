@@ -47,6 +47,8 @@ HF_TOKEN = os.environ.get("HF_TOKEN")
 
 DOCKER_CLIENT = None
 
+CODEASSIST_VERSION = os.open("VERSION", "r").read().strip()
+
 # Ensure logs directory exists
 os.makedirs("logs", exist_ok=True)
 
@@ -361,6 +363,7 @@ def setup_state_service(config: Config) -> docker.models.containers.Container:
             "POLICY_MODEL_BASE_URL": "http://codeassist-policy-model:8001",
             "TELEMETRY_BASE_URL": "https://telemetry-api.internal-apps-central1.clusters.gensyn.ai",
             "DISABLE_TELEMETRY": "true" if config.no_telemetry else "false",
+            "CODEASSIST_VERSION": CODEASSIST_VERSION,
         },
         volumes={
             f"{os.getcwd()}/persistent-data": {
