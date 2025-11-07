@@ -60,6 +60,8 @@ To start CodeAssist, you will need to have a HuggingFace token. Follow [these in
 
 After the script is running, your browser should open automatically but if it doesn't, open a window and go to [localhost:3000](http://localhost:3000) to open CodeAssist.
 
+After the script is running, your browser should open automatically but if it doesn't, open a window and go to <a href="http://localhost:3000" target="_blank">localhost:3000</a> to open CodeAssist.
+
 When the web UI loads, you'll see a login modal where you can log in with email (which sends a one-time passcode) or with Google. After logging in for the first time, your local credentials will be stored in `persistent-data/auth/userKeyMap.json`.
 
 Once logged in, you can select Easy, Medium, or Hard problems from the sidebar. CodeAssist will begin recording an episode. Every click, keystroke, edit, or deletion is logged as training feedback.
